@@ -1,0 +1,14 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+        background-color: linear-gradient(#40bda4 0%, #40bd6a 100%);
+}   
+
+ul {
+    list-style: none;
+}
+
+li {
+    float: left;
+    margin: 10px
+}

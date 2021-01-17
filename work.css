@@ -1,0 +1,17 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: black;
+}
+
+.line {
+    height: 10px;
+    width: 70px;
+    background: black;
+    margin: 8px auto;
+}
+
+.topic {
+    font-size: 40px;
+    line-height: 1.2
+}

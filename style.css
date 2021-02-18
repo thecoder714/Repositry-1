@@ -1,27 +1,16 @@
 body {
-    text-align: center;
     font-family: 'Montserrat', sans-serif;
+    text-align: center;
 }
 
-img {
-    height: 400px;
-    width: 700px;
-    margin: 0px;
+.imagebox {
+    height: 500px;
+    width: 500px;
 }
 
-* {
-    box-sizing: border-box;
-}
-
-.column {
-    float: left;
-    width: 50%;
-    padding: 5px;
-}
-
-/* Clearfix (clear floats) */
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
+#linediv {
+    height: 8px;
+    width: 100%;
+    background: black;
+    margin: 8px auto;
 }

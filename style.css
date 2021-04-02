@@ -1,0 +1,12 @@
+body {
+    font-family: 'Montserrat' , sans-serif;
+    text-align: center;
+}
+
+marquee {
+    background-color: aquamarine;
+}
+
+html {
+    scroll-behavior: smooth;
+}

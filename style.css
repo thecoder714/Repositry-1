@@ -1,5 +1,5 @@
 body {
-    font-family: 'Montserrat' , sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
 }
 
@@ -9,4 +9,56 @@ marquee {
 
 html {
     scroll-behavior: smooth;
+}
+
+#row {
+    margin-left: 350px;
+}
+
+#row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.mainDiv {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+    border: 1px solid #c7c7c7;
+
+}
+
+.mainDiv img {
+    width: 100%;
+    height: 300px;
+}
+
+.mainDiv hr {
+    width: 100%;
+}
+
+.main Div h3 {
+    margin-left: 20px;
+}
+
+.achievments_head {
+    font-size: 20px;
+    padding: 6px 22px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    display: inline-block;
+}
+
+.achievments_head i {
+    float: right;
+}
+
+#achievmentsID {
+    padding-bottom: 10px;
+}
+
+ #contact {
+    margin-top: 200px;
 }

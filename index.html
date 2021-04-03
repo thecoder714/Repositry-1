@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Stick&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -28,32 +28,96 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li> <a href="#welcome">Home</a></li>
-                <li> <a href="#addmission">Admission</a></li>
+                <li> <a href="#campus">Campus</a></li>
+                <li> <a href="#achievments">Achievments</a></li>
                 <li> <a href="#mission">Mission</a></li>
                 <li> <a href="#vision">Vision</a></li>
                 <li> <a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
+
     <marquee onmouseover="this.stop()" onmouseout="this.start()" scrollamount="12">Contact us at school.goenka@gmail.com
     </marquee>
-    
-    <iframe id="video" width="70%" height="700" src="https://www.youtube.com/embed/zILudYnQQrQ" 
-    title="YouTube video player" frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+    <iframe id="video" width="70%" height="700" src="https://www.youtube.com/embed/zILudYnQQrQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
     </iframe>
-    
-    <h2 id="contact">Contact Us</h2>
-    <hr>
-    <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m24!1m8!1m3!1d3595.2693945168517!2d77.4150543!3d28.7022732!3m2!1i1024
+
+    <!--Campus-->
+    <section id="campus">
+        <div class="page-header" id="campus">
+            <h2>Campus</h2>
+            <center>
+                <div id="row">
+                    <div class="mainDiv">
+                        <img class="img-responsive" src="computer%20lab.jpeg">
+                        <kbd>Computer Lab</kbd>
+                        <hr>
+                        <h3 class="text-success text-left">This is where students study compter science and do their exam.</h3>
+                    </div>
+
+                    <div class="mainDiv">
+                        <img class="img-responsive" src="sports%20room.jpeg">
+                        <kbd>Sports Room</kbd>
+                        <hr>
+                        <h3 class="text-success text-left">This is where students play and learn indoor sports, such as chess, ping pong and carrom.</h3>
+                    </div>
+                </div>
+            </center>
+        </div>
+    </section>
+
+    <!--Achievments-->
+    <section id="achievments">
+        <div class="page-header">
+            <h2>Achievments</h2>
+        </div>
+        
+        <!--Achievment 1-->
+        <div class="bg-primary achievments_head" data-toggle="collapse" data-target="#school_achievments1">
+            Quiz Competion by ITS College<i class="fa fa-sort-desc"></i>
+        </div>
+
+        <div id="school_achievments1" class="collapse">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" id="achievmentsID">
+                <img src="goldmedal.png" class="img-responsive img-thumbnail">
+            </div>
+
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 achievmentstext">
+                <h3>Were among top 12 Final teams out of 360 teams.</h3>
+            </div>
+        </div>
+        
+        <!--Achievment 2-->
+        <div class="bg-primary achievments_head" data-toggle="collapse" data-target="#school_achievments2">
+            Singing Competion by ABES<i class="fa fa-sort-desc"></i>
+        </div>
+
+        <div id="school_achievments2" class="collapse">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" id="achievmentsID">
+                <img src="goldmedal.png" class="img-responsive img-thumbnail">
+            </div>
+
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 achievmentstext">
+                <h3>Won First Prize</h3>
+            </div>
+        </div>
+
+    </section>
+
+    <!--Contact-->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <hr>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m24!1m8!1m3!1d3595.2693945168517!2d77.4150543!3d28.7022732!3m2!1i1024
     !2i768!4f13.1!4m13!3e0!4m5!1s0x390cf0e33b309547%3A0x419906c85cff045d!2sAjnara%20Integrity!3m2!1d28.700922!2d
     77.420671!4m5!1s0x390cf0e584a140bf%3A0xb8304ff66521ed8a!2sGD%20Goenka%20Public%20School%20-%20Top%20Public%2
     0CBSE%20School%20in%20Ghaziabad%2C%20Meerut%20Bypass%20Road%2C%20Rajnagar%20Extension%2C%20Ghaziabad%2C%20Ut
-    tar%20Pradesh%20201003!3m2!1d28.7017231!2d77.4136642!5e1!3m2!1sen!2sin!4v1617356807702!5m2!1sen!2sin" 
-    width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy">
-    </iframe>
-    
-    </body>
+    tar%20Pradesh%20201003!3m2!1d28.7017231!2d77.4136642!5e1!3m2!1sen!2sin!4v1617356807702!5m2!1sen!2sin" width="100%" height="600" style="border:0;" allowfullscreen="" loading="fast">
+        </iframe>
+    </section>
+
+
+</body>
 
 </html>

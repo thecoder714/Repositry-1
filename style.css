@@ -51,6 +51,16 @@ html {
     display: inline-block;
 }
 
+.thebutton {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 .achievments_head i {
     float: right;
 }
@@ -59,9 +69,23 @@ html {
     padding-bottom: 10px;
 }
 
- #contact {
-    margin-top: 200px;
+#contact {
+    margin-top: 500px;
 }
 
+
+
+#navimg {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    bottom: 10px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
 
 

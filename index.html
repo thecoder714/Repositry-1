@@ -8,29 +8,9 @@
     <body>
         <h1> Open the Console</h1>
 
-        <p>This was programmed in VS Code using in in-built functions. Learn more about how it works at the bottom of the page.</p>
+        <p>This was programmed in VS Code using in-built functions.</p>
         <br>
         <p>To view the result, go to the Console. <br> <h2>How do I go to the console?</h2> <br> Right click and hit Inspect. Then click on the console. You should see something in the messages section.</p>
-
-        <p><h2>Script that makes it work.</h2><br> 
-            console.log("Yo there");
-            <br>
-            var name1 = "Aarush";
-            console.log(name1);
-            <br>
-            var name2 = "Jha";
-            console.log(name2);
-            <br>
-            console.log(name1.concat(name2));
-            <br><br>
-            var a = 10;
-            <br>
-            var b = 12;
-            <br>
-            var c = Math.pow(a,b);
-            <br>
-            console.log(c);
-        </p>
 
         <script>
             console.log("Yo there");
@@ -43,10 +23,25 @@
 
             console.log(name1.concat(name2));
 
+            function exp (a,b) {
+                var c = Math.pow(a,b);
+                console.log(c);
+            }
             var a = 10;
             var b = 12;
-            var c = Math.pow(a,b);
-            console.log(c);
+            exp (a,b)
+            
+            var a = 5;
+            var b = 6;
+            exp(a,b);
+
+            var a = 12;
+            var b = 6;
+            exp (a,b)
+            
+            var a = 4;
+            var b = 9;
+            exp(a,b)
         </script>
     </body>
 </html>

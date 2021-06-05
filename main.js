@@ -1,27 +1,43 @@
-array1 = [];
+canvas = document.getElementById('myCanvas');
+ctx = canvas.getContext("2d");    
+color = "black";
+width_of_line = 2;
+var width = screen.width;
+new_width = screen.width - 70;
+new_height = screen.height - 300;
+var lastx;
+var lasty;
+var currentx;
+var currenty;
 
-function submit() {
-    var name1 = document.getElementById("s1").value;
-    var name2 = document.getElementById("s2").value;
-    var name3 = document.getElementById("s3").value;
-    var name4 = document.getElementById("s4").value;
-    var name5 = document.getElementById("s5").value;
-
-    array1.push(name1);
-    array1.push(name2);
-    array1.push(name3);
-    array1.push(name4);
-    array1.push(name5);
-
-    console.log(array1);
-
-    document.getElementById("displayname").innerHTML = array1;
-    document.getElementById("submit").style.display = "none";
-    document.getElementById("sort").style.display = "inline-block";
+if (width < 992) {
+    document.getElementById("myCanvas").width = new_width;
+    document.getElementById("myCanvas").height = new_height;
+    document.body.style.overflow = "hidden";
 }
 
-function sorter() {
-    array1.sort();
-    console.log(array1);
-    document.getElementById("displayname").innerHTML = array1; 
+canvas.addEventListener("touchstart", touchstart);
+canvas.addEventListener("touchmove", touchmove)
+
+function touchstart(e) {
+    console.log("touchstart");
+    lastx = e.touches[0].clientX - canvas.offsetLeft;
+    lasty = e.touches[0].clientY - canvas.offsetTop;
+}
+
+function touchmove(e) {
+    console.log("touchmove");
+    currentx = e.touches[0].clientX - canvas.offsetLeft;
+    currenty = e.touches[0].clientX - canvas.offsetLeft;
+
+    ctx.beginPath();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = width_of_line;
+    console.log(lastx,lasty);
+    ctx.moveTo(lastx,lasty);
+    console.log(currentx,currenty);
+    ctx.lineTo(currentx,currenty);
+    ctx.stroke()
+    lastx = currentx;
+    lasty = currenty;
 }

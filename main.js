@@ -1,43 +1,91 @@
-canvas = document.getElementById('myCanvas');
-ctx = canvas.getContext("2d");    
-color = "black";
-width_of_line = 2;
-var width = screen.width;
-new_width = screen.width - 70;
-new_height = screen.height - 300;
-var lastx;
-var lasty;
-var currentx;
-var currenty;
+canvas = document.getElementById("myCanvas");
+ctx = canvas.getContext("2d");
+roverx = 300;
+rovery = 400;
+rover_width = 90;
+rover_height = 90;
+backImg = "mars.jpg";
+roverImg = "rover.png";
+images = ["Curiosity-1.jpeg","Curiosity-2.jpeg","Curiosity-3.jpeg","Curiosity-4.jpeg"];
+random_Number = Math.floor(Math.random() * 4);
+backImg = images[random_Number];
+console.log(backImg);
 
-if (width < 992) {
-    document.getElementById("myCanvas").width = new_width;
-    document.getElementById("myCanvas").height = new_height;
-    document.body.style.overflow = "hidden";
+function loadPage() {
+    back = new Image();
+    back.onload = loadBack()
+    back.src = backImg;
+
+    rover = new Image();
+    rover.onload = loadRover()
+    rover.src = roverImg;
 }
 
-canvas.addEventListener("touchstart", touchstart);
-canvas.addEventListener("touchmove", touchmove)
-
-function touchstart(e) {
-    console.log("touchstart");
-    lastx = e.touches[0].clientX - canvas.offsetLeft;
-    lasty = e.touches[0].clientY - canvas.offsetTop;
+function loadBack() {
+    ctx.drawImage(back,0,0,canvas.width,canvas.height);
 }
 
-function touchmove(e) {
-    console.log("touchmove");
-    currentx = e.touches[0].clientX - canvas.offsetLeft;
-    currenty = e.touches[0].clientX - canvas.offsetLeft;
-
-    ctx.beginPath();
-    ctx.strokeStyle = color;
-    ctx.lineWidth = width_of_line;
-    console.log(lastx,lasty);
-    ctx.moveTo(lastx,lasty);
-    console.log(currentx,currenty);
-    ctx.lineTo(currentx,currenty);
-    ctx.stroke()
-    lastx = currentx;
-    lasty = currenty;
+function loadRover() {
+    ctx.drawImage(rover,roverx,rovery,rover_width,rover_height);
 }
+
+window.addEventListener("keydown", key);
+
+function key(e) {
+    keyPressed = e.keyCode;
+    console.log(keyPressed);
+    
+    if (keyPressed == '38') {
+        UP();
+        console.log("up");
+    }
+    if (keyPressed == '40') {
+        DOWN();
+        console.log("down");
+    }
+    if (keyPressed == '37') {
+        LEFT();
+        console.log("left");
+    }
+    if (keyPressed == '39') {
+        RIGHT();
+        console.log("right");
+    }
+}
+
+function UP() {
+    if (rovery >= 0) {
+        rovery -= 10;
+        console.log(roverx,rovery);
+        loadBack();
+        loadRover();
+    }
+}
+
+function DOWN() {
+    if (rovery <= 600) {
+        rovery += 10;
+        console.log(roverx,rovery);
+        loadBack();
+        loadRover();
+    }
+}
+
+function LEFT() {
+    if (roverx >= 0) {
+        roverx -= 10;
+        console.log(roverx,rovery);
+        loadBack();
+        loadRover();
+    }
+}
+
+function RIGHT() {
+    if (roverx <= 800) {
+        roverx += 10;
+        console.log(roverx,rovery);
+        loadBack();
+        loadRover();
+    }
+}
+

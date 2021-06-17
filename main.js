@@ -110,7 +110,7 @@ function car1_up() {
 }
 
 function car1_down() {
-    if (car1_y >= 0) {
+    if (car1_y <= 0) {
         car1_y += 10;
         uploadBack();
         uploadCar1();
@@ -148,7 +148,7 @@ function car2_up() {
 }
 
 function car2_down() {
-    if (car2_y >= 0) {
+    if (car2_y <= 0) {
         car2_y += 10;
         uploadBack();
         uploadCar1();

@@ -86,6 +86,16 @@ function my_keydown(e) {
     if (keypressed == "68") {
         car2_right();
     }
+
+    //check who won
+
+    if (car1_x >= 850) {
+        document.getElementById("result").innerHTML = "Car 1 won!";
+    }
+
+    if (car2_x >= 850) {
+        document.getElementById("result").innerHTML = "Car 2 won!";
+    }
 }
 
 //car 1 control

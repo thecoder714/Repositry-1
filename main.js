@@ -1,91 +1,165 @@
+//canvas properties
+
 canvas = document.getElementById("myCanvas");
 ctx = canvas.getContext("2d");
-roverx = 300;
-rovery = 400;
-rover_width = 90;
-rover_height = 90;
-backImg = "mars.jpg";
-roverImg = "rover.png";
-images = ["Curiosity-1.jpeg","Curiosity-2.jpeg","Curiosity-3.jpeg","Curiosity-4.jpeg"];
-random_Number = Math.floor(Math.random() * 4);
-backImg = images[random_Number];
-console.log(backImg);
+background_img = "Car.gif";
+
+//define car 1 properties
+
+car1_width = 170;
+car1_height = 70;
+car1_img = "Car1.png";
+car1_x = 10;
+car1_y = 10;
+
+//define car 2 properties
+
+car2_width = 170;
+car2_height = 70;
+car2_img = "Car2.jpeg";
+car2_x = 10;
+car2_y = 100;
+
+//load images
 
 function loadPage() {
     back = new Image();
-    back.onload = loadBack()
-    back.src = backImg;
+    back.onload = uploadBack;
+    back.src = background_img;
 
-    rover = new Image();
-    rover.onload = loadRover()
-    rover.src = roverImg;
+    car1 = new Image();
+    car1.onload = uploadCar1;
+    car1.src = car1_img;
+
+    car2 = new Image();
+    car2.onload = uploadCar2;
+    car2.src = car2_img;
 }
 
-function loadBack() {
+//upload images
+
+function uploadBack() {
     ctx.drawImage(back,0,0,canvas.width,canvas.height);
 }
 
-function loadRover() {
-    ctx.drawImage(rover,roverx,rovery,rover_width,rover_height);
+function uploadCar1() {
+    ctx.drawImage(car1,car1_x,car1_y,car1_width,car1_height);
 }
 
-window.addEventListener("keydown", key);
-
-function key(e) {
-    keyPressed = e.keyCode;
-    console.log(keyPressed);
-    
-    if (keyPressed == '38') {
-        UP();
-        console.log("up");
-    }
-    if (keyPressed == '40') {
-        DOWN();
-        console.log("down");
-    }
-    if (keyPressed == '37') {
-        LEFT();
-        console.log("left");
-    }
-    if (keyPressed == '39') {
-        RIGHT();
-        console.log("right");
-    }
+function uploadCar2() {
+    ctx.drawImage(car2,car2_x,car2_y,car2_width,car2_height);
 }
 
-function UP() {
-    if (rovery >= 0) {
-        rovery -= 10;
-        console.log(roverx,rovery);
-        loadBack();
-        loadRover();
-    }
-}
+//add keypress to cars
 
-function DOWN() {
-    if (rovery <= 600) {
-        rovery += 10;
-        console.log(roverx,rovery);
-        loadBack();
-        loadRover();
-    }
-}
+window.addEventListener("keydown", my_keydown);
 
-function LEFT() {
-    if (roverx >= 0) {
-        roverx -= 10;
-        console.log(roverx,rovery);
-        loadBack();
-        loadRover();
+function my_keydown(e) {
+    var keypressed = e.keyCode;
+
+    //control for car 1
+
+    if (keypressed == "38") {
+        car1_up();
+    }
+    if (keypressed == "40") {
+        car1_down();
+    }
+    if (keypressed == "37") {
+        car1_left();
+    }
+    if (keypressed == "39") {
+        car1_right();
+    }
+
+    //control for car 2
+
+    if (keypressed == "87") {
+        car2_up();
+    }
+    if (keypressed == "83") {
+        car2_down();
+    }
+    if (keypressed == "65") {
+        car2_left();
+    }
+    if (keypressed == "68") {
+        car2_right();
     }
 }
 
-function RIGHT() {
-    if (roverx <= 800) {
-        roverx += 10;
-        console.log(roverx,rovery);
-        loadBack();
-        loadRover();
+//car 1 control
+
+function car1_up() {
+    if (car1_y >= 0) {
+        car1_y -= 10;
+        uploadBack();
+        uploadCar1();
+        uploadCar2();
     }
 }
 
+function car1_down() {
+    if (car1_y >= 0) {
+        car1_y += 10;
+        uploadBack();
+        uploadCar1();
+        uploadCar2();
+    }
+}
+
+function car1_left() {
+    if (car1_x >= 0) {
+        car1_x -= 10;
+        uploadBack();
+        uploadCar1();
+        uploadCar2();
+    }
+}
+
+function car1_right() {
+    if (car1_x >= 0) {
+        car1_x += 10;
+        uploadBack();
+        uploadCar1();
+        uploadCar2();
+    }
+}
+
+//car 2 control
+
+function car2_up() {
+    if (car2_y >= 0) {
+        car2_y -= 10;
+        uploadBack();
+        uploadCar1();
+        uploadCar2();
+    }
+}
+
+function car2_down() {
+    if (car2_y >= 0) {
+        car2_y += 10;
+        uploadBack();
+        uploadCar1();
+        uploadCar2();
+    }
+}
+
+function car2_left() {
+    if (car2_x >= 0) {
+        car2_x -= 10;
+        uploadBack();
+        uploadCar1();
+        uploadCar2();
+    }
+}
+
+function car2_right() {
+    if (car2_x >= 0) {
+        car2_x += 10;
+        uploadBack();
+        uploadCar1();
+        uploadCar2();
+    }
+}

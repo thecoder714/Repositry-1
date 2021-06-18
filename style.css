@@ -1,15 +1,4 @@
 body {
-    background-image: url("Car.gif");
-    background-position: center;
-    background-size: cover;
-}
-
-#myCanvas {
-    border-width: 10px;
-    background-color: white;
-    border-style: ridge;
-}
-
-h1,h2,h4 {
-    color: white !important;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
 }

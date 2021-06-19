@@ -2,3 +2,9 @@ body {
     text-align: center;
     font-family: 'Open Sans', sans-serif;
 }
+
+canvas {
+    border:inset;
+    border-width: 15px;
+    border-radius: 25px;
+}

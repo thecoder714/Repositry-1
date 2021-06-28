@@ -1,18 +1,20 @@
-canvas = document.getElementById("myCanvas");
-ctx = canvas.getContext("2d");
+menu = ["Veg Margherita Pizza", "Tandoori Pizza"];
 
-function drawCirc(color,x,y) {
-    ctx.beginPath();
-    ctx.strokeStyle = color;
-    ctx.lineWidth = 10;
-    ctx.arc(x,y,50,0, 2 * Math.PI);
-    ctx.stroke();
+function getmenu() {
+    var htmldata;
+    htmldata = "<ol class='menulist'>"
+    menu.sort();
+
+    for (let i = 0; i < menu.length; i++) {
+        htmldata += '<li>' + menu[i];
+    }
+    htmldata += '</ol>';
+    document.getElementById("display_menu").innerHTML = htmldata;
 }
 
-function drawLogo() {
-    drawCirc("black",500,300);
-    drawCirc("blue",400,300);
-    drawCirc("red",600,300);
-    drawCirc("yellow",450,350);
-    drawCirc("green",550,350)
+function add_top() {
+    var item = document.getElementById("add_item").value;
+    menu.push(item);
+    getmenu();
 }
+

@@ -1,20 +1,35 @@
-menu = ["Veg Margherita Pizza", "Tandoori Pizza"];
+var canvas = new fabric.Canvas("mycanvas");
 
-function getmenu() {
-    var htmldata;
-    htmldata = "<ol class='menulist'>"
-    menu.sort();
+var height = 150; 
+var width = 130;
+var block_height = 30;
+var block_width = 30; 
+var x = 10;
+var y = 10;
+var player, block_image;
 
-    for (let i = 0; i < menu.length; i++) {
-        htmldata += '<li>' + menu[i];
-    }
-    htmldata += '</ol>';
-    document.getElementById("display_menu").innerHTML = htmldata;
+function player_update() {
+    fabric.Image.fromURL("player.png", function (Img){
+        player = Img;
+        player.scaleToWidth(width);
+        player.scaleToHeight(height);
+        player.set({
+            top: y,
+            left: x
+        });
+        canvas.add(player);
+    })
 }
 
-function add_top() {
-    var item = document.getElementById("add_item").value;
-    menu.push(item);
-    getmenu();
+function block_update(block) {
+    fabric.Image.fromURL(block, function (Img){
+        block = Img;
+        block.scaleToWidth(block_width);
+        block.scaleToHeight(block_height);
+        block.set({
+            top: y,
+            left: x
+        });
+        canvas.add(block);
+    })
 }
-
